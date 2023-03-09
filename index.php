@@ -6,24 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MFSDSAI</title>
     <style>
-        body{
-            margin: 0px;
-        }
-        .page{
-            display: flex;
-            flex-direction: column;
-        }
         .header {
+            margin: 10px;
             color: black;
-            height: 160px;
         }
         .header::before{
             position: absolute;
             margin-top: -10px;
             margin-left: -20px;
-            margin-right: -20px;
             width: 100%;
-            height: 200px;
+            height: 124px;
             content: "";
             background: url("./background.webp");
             z-index: -1;
@@ -31,23 +23,19 @@
         }
 
         .content {
-            margin-top: -20px;
             display: flex;
             flex-direction: row;
-            align-items: top;
         }
-
         .nav {
             margin-left: -8px;
             background-image: url("./background_intro.webp");
         }
-
         .intro {
             font-weight: bold;
             font-size: large;
-            width: 95%;
+            width: 100%;
             /* height: 300px; */
-            background-repeat: no-repeat;
+            /* background-repeat: no-repeat; */
         }
         .intro ::before{
             content: "";
@@ -78,12 +66,10 @@
         a {
             text-decoration: none;
         }
-       
     </style>
 </head>
 
 <body>
-    <div class="page">
     <div class="header">
         <h2>
             Mehta Family School of Data Science and Artificial Intelligence <br> IIT GUWAHATI
@@ -94,7 +80,7 @@
     </div>
     <div class="content">
         <div class="nav">
-            <button> <a href="about.php"> About Us</a></button>
+            <button> <a href="about.php"> About</a></button>
             <button> <a href="registration.php"> Registration</a></button>
             <button> <a href="login.php">Login</a></button>
             <button> <a href="new_associated_faculties.php"> New Entry for faculty</a></button>
@@ -108,8 +94,6 @@
             </p>
         </div>
     </div>
-    </div>
-   
 </body>
 
 </html>
