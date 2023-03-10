@@ -25,10 +25,12 @@
         .content {
             display: flex;
             flex-direction: row;
+            height: 500px;
         }
         .nav {
             margin-left: -8px;
             background-image: url("./background_intro.webp");
+            /* height: 500px; */
         }
         .intro {
             font-weight: bold;
@@ -42,7 +44,7 @@
             position: absolute;
             margin-top: -20px;
             width: 89%;
-            height: 417px;
+            height: 500px;
             background: url("./iitg_library.jpg") no-repeat center center/cover;
             z-index: -1;
             opacity: 0.4;
@@ -80,13 +82,13 @@
     </div>
     <div class="content">
         <div class="nav">
-            <button> <a href="about.php"> About</a></button>
+            <!-- <button> <a href="about.php"> About</a></button> -->
             <button> <a href="registration.php"> Registration</a></button>
             <button> <a href="login.php">Login</a></button>
-            <button> <a href="new_associated_faculties.php"> New Entry for faculty</a></button>
+            <!-- <button> <a href="new_associated_faculties.php"> New Entry for faculty</a></button>
             <button> <a href="search_associated_faculties.php"> Search for faculty</a></button>
-            <button> <a href="queries.php">Courses Departments Instructors</a></button>
-            <button> <a href="library.php">Library</a></button>
+            <button> <a href="queries.php">Courses Departments Instructors</a></button> -->
+            <!-- <button> <a href="library.php">Library</a></button> -->
         </div>
         <div class="intro">
             <p>
