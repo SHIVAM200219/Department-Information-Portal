@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MFSDSAI</title>
+    <title>Login</title>
     <style>
         .header {
             margin: 10px;
@@ -28,6 +28,7 @@
             display: flex;
             flex-direction: row;
             background-color: #fbc47e;
+            height: 500px;
         }
 
         .nav {
@@ -73,18 +74,18 @@
 
     <div class="content">
         <div class="nav">
-            <button> <a href="about.php"> About Us</a></button>
+            <button> <a href="index.php"> About Us</a></button>
             <button> <a href="registration.php"> Registration</a></button>
-            <button> <a href="new_associated_faculties.php"> New Entry for faculty</a></button>
+            <!-- <button> <a href="new_associated_faculties.php"> New Entry for faculty</a></button>
             <button> <a href="search_associated_faculties.php"> Search for faculty</a></button>
             <button> <a href="queries.php">Courses Departments Instructors</a></button>
-            <button> <a href="library.php">Library</a></button>
+            <button> <a href="library.php">Library</a></button> -->
         </div>
         <div class="output">
             <div class="intro">
                 <form action="" method="post">
-                    <p> Email(official): <input type="text" name="email" placeholder="Enter your E-mail"></p>
-                    <p> Password: <input type="password" name="password" placeholder="Enter your Password"></p>
+                    <p> Email(official): <input type="text" name="email"  placeholder="Enter your E-mail"></p>
+                    <p> Password: <input type="password" name="password"  placeholder="Enter your Password"></p>
 
                     <input type="reset" value="Reset" name="reset">
                     <input type="submit" value="Submit" name="submit">
@@ -112,10 +113,13 @@
                         // echo $_POST['email'], $_POST['password'];
                         if ($_POST['email'] == $row['email'] && $_POST['password'] == $row['password']) {
                             echo "Logged in Successful<br>";
+                            header('Location: about.php');
+                            // or die();
                             $flag = 1;
+                            exit();
                         }
                     }
-                    if ($flag == 0) {
+                    if ($flag == 0 && isset($_POST['email']) ) {
                         echo "Email or Password is incorrect<br>";
                     }
                 } catch (PDOException $e) {
