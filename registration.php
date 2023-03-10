@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MFSDSAI</title>
+    <title>Registration</title>
     <style>
         .header {
             margin: 10px;
@@ -26,6 +26,7 @@
         .content {
             display: flex;
             flex-direction: row;
+            height: 500px;
         }
 
         .nav {
@@ -35,7 +36,7 @@
 
         .intro {
             width: 100%;
-            height: 500px;
+            /* height: 500px; */
             background-color: #fbc47e;
         }
 
@@ -72,12 +73,12 @@
     </div>
     <div class="content">
         <div class="nav">
-            <button> <a href="about.php"> About Us</a></button>
+            <button> <a href="index.php"> About</a></button>
             <button> <a href="login.php">Login</a></button>
-            <button> <a href="new_associated_faculties.php"> New Entry for faculty</a></button>
+            <!-- <button> <a href="new_associated_faculties.php"> New Entry for faculty</a></button>
             <button> <a href="search_associated_faculties.php"> Search for faculty</a></button>
             <button> <a href="queries.php">Courses Departments Instructors</a></button>
-            <button> <a href="library.php">Library</a></button>
+            <button> <a href="library.php">Library</a></button> -->
 
         </div>
         <div class="intro">
@@ -110,9 +111,9 @@
             $numeric_character = 0;
             $duplicate_email = 0;
             $str = $_POST['password'];
-            if (strlen($str) < 8) {
+            if (strlen($str) < 8  && isset($_POST['email'])) {
                 echo "Password should be of minimum 8 characters <br>";
-            } else {
+            } else if(isset($_POST['email'])) {
                 $chars = str_split($str);
                 foreach ($chars as $char) {
 
