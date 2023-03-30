@@ -139,7 +139,7 @@
                                     ':gender' => $_POST['gender'],
                                     ':dob' => $_POST['dob'],
                                     ':email' => $_POST['email'],
-                                    ':password' => $_POST['password']
+                                    ':password' => md5($_POST['password'])
                                 )
                             );
                             echo "Registered successfully<br>";
