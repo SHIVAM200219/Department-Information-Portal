@@ -69,7 +69,7 @@
 
                 while ($row = $stm->fetch(PDO::FETCH_ASSOC)) {
 
-                    if ($_POST['email'] == $row['email'] && $_POST['password'] == $row['password']) {
+                    if ($_POST['email'] == $row['email'] && md5($_POST['password']) == $row['password']) {
                         $flag = 1;
                         echo "<br>Logged in Successful<br>";
                         header('Location: about.php');
