@@ -1,5 +1,5 @@
 # Department-Information-Portal
-– Technologies Used - HTML, CSS, PHP, SQL
+– Technologies Used - HTML, CSS, Bootstrap, PHP, SQL
 – Provides Information about Department, Professors, Students, Courses and Book availability
 – It includes 7 pages - About, Registration, Login, New Entry for Faculty, Search for Faculty, Courses Department
 Instructor
