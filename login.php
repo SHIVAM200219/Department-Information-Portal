@@ -12,14 +12,14 @@
 </head>
 
 <body class="bg-info">
-    <div class="bg-primary p-2 text-light">
-        <h2>
-            Mehta Family School of Data Science and Artificial Intelligence <br> IIT GUWAHATI
-        </h2>
-        <h3>
-            Welcome to our Information Portal
-        </h3>
-    </div>
+    <header class="bg-primary d-flex align-items-center p-3 justify-content-around">
+        <div class="p-2">
+            <img src="./img/logo.jpg" height="100px" width="100px" style="border-radius: 100px;" alt="IIT Guwahati">
+        </div>
+        <div>
+            <h1 class="mb-0 text-light text-center">Mehta Family School Of Data Science and Artificial Intelligence<br> IIT Guwahati</h1>
+        </div>
+    </header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/index.php">MFSDSAI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,9 +57,9 @@
             $flag = 0;
             $servername = "localhost";
             $port_no = 3306;
-            $username = "id20433779_shivam";
+            $username = "id20433779_shivam3";
             $password = "Portaldb@123";
-            $myDB = "id20433779_PortalDB";
+            $myDB = "id20433779_portaldb";
             //Name of the database to access
             try {
                 $conn = new PDO("mysql:host=$servername;port=$port_no;dbname=$myDB", $username, $password);
@@ -71,22 +71,32 @@
 
                     if ($_POST['email'] == $row['email'] && md5($_POST['password']) == $row['password']) {
                         $flag = 1;
-                        echo "<br>Logged in Successful<br>";
-                        header('Location: about.php');
+                        echo "Logged in Successful<br>";
+                        ?>
+                        <script>
+                            window.location.replace("./about.php");
+                        </script>
+                        <?php
+                        // header('Location: ./about.php');
                         // or die();
-                        exit();
+                        // exit();
                     }
                 }
 
                 if ($flag == 0 && isset($_POST['email'])) {
-                    echo "<br>Email or Password is incorrect<br>";
+                    echo "Email or Password is incorrect<br>";
                 }
+                //  echo $flag;
             } catch (PDOException $e) {
-                echo "<br>Connection failed: " . $e->getMessage();
+                echo "Connection failed: " . $e->getMessage();
             }
-            // echo "<br>";
+           
             ?>
+            <a href = "./about.php" class = "text-light"><?php
+            // echo $flag;
+            if($flag==1){echo "Click here to Enter";}?> </a>
         </div>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
